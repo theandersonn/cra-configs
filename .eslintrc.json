@@ -3,15 +3,15 @@
         "browser": true,
         "es2021": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "eslint:recommended",
-        "airbnb"
-    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "modules": true
         },
         "ecmaVersion": 12,
         "sourceType": "module"
@@ -20,7 +20,16 @@
         "react",
         "react-hooks"
     ],
+    "extends": [
+      "airbnb",
+      "prettier",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:prettier/recommended"
+    ],
     "rules": {
+      "prettier/prettier": "error",
         "react/react-in-jsx-scope": "off",
         "no-unused-vars": "warn",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
