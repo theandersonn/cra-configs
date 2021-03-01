@@ -6,6 +6,15 @@
 - Dependendo do erro, deve alertar sem quebrar a aplicação;
 - Que funcione em qualquer máquina.
 
+**Antes de salvar o arquivo**
+
+<img alt="Exemplo: Antes de salvar o arquivo" src="https://raw.githubusercontent.com/theandersonn/cra-eslint-prettier/master/src/assets/antes.png" />
+<br><br>
+
+**Depois de salvar o arquivo**
+
+<img alt="Exemplo: Depois de salvar o arquivo" src="https://raw.githubusercontent.com/theandersonn/cra-eslint-prettier/master/src/assets/depois.png" />
+<br><br>
 ### Requisitos:
 
 Ter instalado no VS Code as extensões:
