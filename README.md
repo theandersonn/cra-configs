@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+## CRA - Eslint + Prettier
+> Configurações iniciais para a integração do Eslint e Prettier.
+### Cenário:
+- Ao salvar, que o Prettier formate o arquivo, deixando tudo bonitinho;
+- Que o Eslint mostre warnings no terminal e no VS Code;
+- Dependendo do erro, deve alertar sem quebrar a aplicação;
+- Que funcione em qualquer máquina.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Requisitos:
 
-## Available Scripts
+Ter instalado no VS Code as extensões:
+- ESLint
+- Prettier
 
-In the project directory, you can run:
+### Recomendado:
+*Deixe no settings do seu VS Code apenas configurações pessoais, como aparência etc...
+As configurações lógicas devem ser isoladas na raiz do projeto, em: `.vscode/settings.json`*
+### Roteiro deste exemplo:
 
-### `yarn start`
+**Criar um novo projeto com Create React App**
+```bash
+npx create-react-app <project-name>
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O Create React App estende no package.json configurações para o eslint, pode remover: (serão adicionadas em .eslintrc.json)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```json
+"eslintConfig": {
+ "extends": ["react-app", "react-app/jest"]
+}
+```
 
-### `yarn test`
+**Instalar o Eslint**
+```bash
+yarn add -D eslint
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Setar as configurações do eslint**
+```bash
+npx eslint --init
+```
 
-### `yarn build`
+Para criar o arquivo .eslintrc.json é necessário setar as questões abaixo, que variam de acordo com o projeto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```txt
+- How would you like to use ESLint?
+To check syntax, find problems, and enforce code style
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- What type of modules does your project use?
+JavaScript modules (import/export)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Which framework does your project use?
+React
 
-### `yarn eject`
+- Does your project use TypeScript?
+No
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Where does your code run?
+browser
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+How would you like to define a style for your project?
+- Use a popular style guide
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Which style guide do you want to follow?
+Airbnb: https://github.com/airbnb/javascript
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- What format do you want your config file to be in?
+JSON
 
-## Learn More
+- Would you like to install them now with npm?
+No (porque estou utilizando yarn)
+se estiver utilizando npm, confirme e o eslint instalará as dependência.
+se estiver utilizando yarn, pegue as dependências que ele irá exibir e instale-as
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+eslint-plugin-react@^7.21.5
+eslint-config-airbnb@latest
+eslint@^5.16.0 || ^6.8.0 || ^7.2.0
+eslint-plugin-import@^2.22.1
+eslint-plugin-jsx-a11y@^6.4.1
+eslint-plugin-react-hooks@^4 || ^3 || ^2.3.0 || ^1.7.0
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Pode remover
+eslint@^5.16.0 || ^6.8.0 || ^7.2.0
+Porque já foi instalada no passo anterior
+```
 
-### Code Splitting
+Será criado o arquivo .eslintrc.json na raiz do projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```json
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+    }
+}
+```
 
-### Analyzing the Bundle Size
+### Adicionar o Prettier
+```bash
+yarn add -D prettier eslint-config-prettier eslint-plugin-prettier babel-eslint
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Crie o arquivo .editorconfig na raiz do projeto
+```txt
+root = true
 
-### Making a Progressive Web App
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Crie o arquivo .prettierrc na raiz do projeto
+```javascript
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "tabWidth": 2
+}
+```
+### Considerações
 
-### Advanced Configuration
+Ações que fazem perder tempo, esquentar a cabeça e até entrar em desespero.
+- Copiar e colar indiscriminadamente as depedências e o arquivo .eslintrc.json de um projeto para outro;
+- Ter as configurações de ações lógicas no VS Code da máquina.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
