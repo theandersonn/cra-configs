@@ -15,6 +15,7 @@
 
 <img alt="Exemplo: Depois de salvar o arquivo" src="https://raw.githubusercontent.com/theandersonn/cra-eslint-prettier/master/src/assets/depois.png" />
 <br><br>
+
 ### Requisitos:
 
 Ter instalado no VS Code as extensões:
