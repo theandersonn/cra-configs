@@ -29,7 +29,6 @@
       "plugin:prettier/recommended"
     ],
     "rules": {
-      "prettier/prettier": "error",
         "react/react-in-jsx-scope": "off",
         "no-unused-vars": "warn",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]

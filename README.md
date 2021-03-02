@@ -143,7 +143,8 @@ insert_final_newline = true
 ```javascript
 {
   "singleQuote": true,
-  "trailingComma": "all",
+  "trailingComma": "none",
+  "printWidth": 100,
   "tabWidth": 2
 }
 ```
