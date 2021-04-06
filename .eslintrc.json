@@ -1,7 +1,8 @@
 {
     "env": {
-        "browser": true,
-        "es2021": true
+      "jest": true,
+      "browser": true,
+      "es2021": true
     },
     "globals": {
       "Atomics": "readonly",
@@ -31,6 +32,7 @@
     "rules": {
         "react/react-in-jsx-scope": "off",
         "no-unused-vars": "warn",
+        "import/prefer-default-export": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     }
 }
