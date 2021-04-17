@@ -144,10 +144,16 @@ insert_final_newline = true
 {
   "singleQuote": true,
   "trailingComma": "none",
-  "printWidth": 100,
-  "tabWidth": 2
+  "semi": false
 }
 ```
+
+### Configure o arquivo eslintrc
+Configure o arquivo `.eslintrc.json` de acordo com o que segue na raiz desse projeto
+
+### Comnando lint no package
+Crie o comando `"lint": "eslint src --max-warnings=0"` em scripts do `package.json`
+
 ### Considerações
 
 Ações que fazem perder tempo, esquentar a cabeça e até entrar em desespero.
