@@ -11,12 +11,12 @@
 
 **Antes de salvar o arquivo**
 
-<img alt="Exemplo: Antes de salvar o arquivo" src="https://raw.githubusercontent.com/theandersonn/cra-eslint-prettier/master/src/assets/antes.png" />
+<img alt="Exemplo: Antes de salvar o arquivo" src="https://raw.githubusercontent.com/theandersonn/cra-configs/master/eslint-prettier/src/assets/antes.png" />
 <br><br>
 
 **Depois de salvar o arquivo**
 
-<img alt="Exemplo: Depois de salvar o arquivo" src="https://raw.githubusercontent.com/theandersonn/cra-eslint-prettier/master/src/assets/depois.png" />
+<img alt="Exemplo: Depois de salvar o arquivo" src="https://raw.githubusercontent.com/theandersonn/cra-configs/master/eslint-prettier/src/assets/depois.png" />
 <br><br>
 
 ### Requisitos:
