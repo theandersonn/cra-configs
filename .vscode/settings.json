@@ -8,5 +8,5 @@
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  },
+  }
 }

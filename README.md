@@ -1,6 +1,9 @@
 ## CRA - Eslint + Prettier
+
 > Configurações iniciais para a integração do Eslint e Prettier.
+
 ### Cenário:
+
 - Ao salvar, que o Prettier formate o arquivo, deixando tudo bonitinho;
 - Que o Eslint mostre warnings no terminal e no VS Code;
 - Dependendo do erro, deve alertar sem quebrar a aplicação;
@@ -19,15 +22,19 @@
 ### Requisitos:
 
 Ter instalado no VS Code as extensões:
+
 - ESLint
 - Prettier
 
 ### Recomendado:
-*Deixe no settings do seu VS Code apenas configurações pessoais, como aparência etc...
-As configurações lógicas devem ser isoladas na raiz do projeto, em: `.vscode/settings.json`*
+
+_Deixe no settings do seu VS Code apenas configurações pessoais, como aparência etc...
+As configurações lógicas devem ser isoladas na raiz do projeto, em: `.vscode/settings.json`_
+
 ### Roteiro deste exemplo:
 
 **Criar um novo projeto com Create React App**
+
 ```bash
 npx create-react-app <project-name>
 ```
@@ -41,11 +48,13 @@ O Create React App estende no package.json configurações para o eslint, pode r
 ```
 
 **Instalar o Eslint**
+
 ```bash
 yarn add -D eslint
 ```
 
 **Setar as configurações do eslint**
+
 ```bash
 npx eslint --init
 ```
@@ -98,35 +107,31 @@ Será criado o arquivo .eslintrc.json na raiz do projeto
 
 ```json
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {}
 }
 ```
 
 ### Adicionar o Prettier
+
 ```bash
 yarn add -D prettier eslint-config-prettier eslint-plugin-prettier babel-eslint
 ```
 
 ### Crie o arquivo .editorconfig na raiz do projeto
+
 ```txt
 root = true
 
@@ -140,6 +145,7 @@ insert_final_newline = true
 ```
 
 ### Crie o arquivo .prettierrc na raiz do projeto
+
 ```javascript
 {
   "singleQuote": true,
@@ -149,15 +155,16 @@ insert_final_newline = true
 ```
 
 ### Configure o arquivo eslintrc
+
 Configure o arquivo `.eslintrc.json` de acordo com o que segue na raiz desse projeto
 
 ### Comnando lint no package
+
 Crie o comando `"lint": "eslint src --max-warnings=0"` em scripts do `package.json`
 
 ### Considerações
 
 Ações que fazem perder tempo, esquentar a cabeça e até entrar em desespero.
+
 - Copiar e colar indiscriminadamente as depedências e o arquivo .eslintrc.json de um projeto para outro;
 - Ter as configurações de ações lógicas no VS Code da máquina.
-
-
