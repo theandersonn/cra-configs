@@ -24,7 +24,6 @@
 Ter instalado no VS Code as extensões:
 
 - ESLint
-- Prettier
 
 ### Recomendado:
 
@@ -148,9 +147,10 @@ insert_final_newline = true
 
 ```javascript
 {
+  "semi": true,
   "singleQuote": true,
-  "trailingComma": "none",
-  "semi": false
+  "trailingComma": "es5",
+  "endOfLine": "auto"
 }
 ```
 
@@ -160,7 +160,8 @@ Configure o arquivo `.eslintrc.json` de acordo com o que segue na raiz desse pro
 
 ### Comnando lint no package
 
-Crie o comando `"lint": "eslint src --max-warnings=0"` em scripts do `package.json`
+Crie o comando `"eslint ./src --ext .jsx,.js"` em scripts do `package.json`
+Crie o comando `"prettier --write ."` em scripts do `package.json`
 
 ### Considerações
 

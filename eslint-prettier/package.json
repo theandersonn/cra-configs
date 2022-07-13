@@ -1,5 +1,5 @@
 {
-  "name": "cra-eslint-prettier",
+  "name": "eslint-prettier",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
